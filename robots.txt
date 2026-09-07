@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hyper3labs.github.io/hyper3clip.github.io/sitemap.xml
