@@ -233,6 +233,24 @@ Text  → text encoder  → one global embedding ─┘</code></pre>
             <p class="analogy"><strong>Analogy:</strong> a node is a city; its embedding is the city’s location on a map.</p>
           </article>
         </div>
+
+        <article class="cone-explainer">
+          <div class="cone-heading">
+            <h3>Entailment cones encode direction</h3>
+            <p>Similarity asks whether two embeddings are close. An entailment cone asks another question: which embedding represents the more specific meaning?</p>
+          </div>
+          <div class="cone-content">
+            <p>Each node <i>b</i> defines a cone containing the embeddings permitted to be more specific than <i>b</i>. For the relation <i>a</i> ≼ <i>b</i>, the more specific node <i>a</i> should lie inside the cone rooted at <i>b</i>. If <i>a</i> falls outside that cone, the training objective applies a penalty.</p>
+            <p class="cone-analogy">A useful analogy is a flashlight beam. The node at the flashlight is the broader concept, and the beam marks the region where valid specializations can appear. Two nodes may be close, but their relationship respects the hierarchy only when the more specific node lies inside the broader node’s beam.</p>
+            <p>For Hyper3-CLIP, the three relations mean:</p>
+            <ul class="cone-relations">
+              <li><span class="cone-formula"><i>I<sup>q</sup> ≼ T<sup>q</sup></i></span><span>the query-conditioned visual node is a specific visual instance of the query text.</span></li>
+              <li><span class="cone-formula"><i>I ≼ I<sup>q</sup></i></span><span>the complete image is more specific than the visual concept selected by the query.</span></li>
+              <li><span class="cone-formula"><i>T<sup>π(q)</sup> ≼ T<sup>q</sup></i></span><span>the construction parent, such as a detailed caption, is more specific than the shorter query derived from it.</span></li>
+            </ul>
+            <p class="cone-caveat">Here, “parent” describes how the query was constructed; it does not always mean “more general.” Entailment cones encourage a geometric ordering, but they do not constitute a logical proof that one statement entails another.</p>
+          </div>
+        </article>
       </div>
     </section>
 

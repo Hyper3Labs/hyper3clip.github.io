@@ -639,6 +639,72 @@ pre.intuition-diagram {
   color: var(--ink) !important;
 }
 
+.cone-explainer {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  margin-top: clamp(2.5rem, 5vw, 4.5rem);
+  padding: clamp(1.5rem, 3.5vw, 3rem);
+  border-top: 4px solid var(--blue);
+  background: #edf4fd;
+  box-shadow: var(--shadow-small);
+}
+
+.cone-heading h3 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.45rem, 2.5vw, 2rem);
+  line-height: 1.12;
+}
+
+.cone-heading p,
+.cone-content p,
+.cone-relations li {
+  color: var(--ink-soft);
+}
+
+.cone-heading p,
+.cone-content > p:first-child {
+  margin-top: 0;
+}
+
+.cone-analogy {
+  margin: 1.5rem 0;
+  padding: 1.2rem 1.35rem;
+  border-left: 4px solid var(--orange);
+  color: var(--ink) !important;
+  background: var(--paper);
+}
+
+.cone-relations {
+  margin: 1rem 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.cone-relations li {
+  display: grid;
+  grid-template-columns: minmax(150px, 0.42fr) minmax(0, 1fr);
+  gap: 1.25rem;
+  padding: 0.85rem 0;
+  border-top: 1px solid #c5d6eb;
+}
+
+.cone-relations li:last-child {
+  border-bottom: 1px solid #c5d6eb;
+}
+
+.cone-formula {
+  color: var(--ink);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.15rem;
+  white-space: nowrap;
+}
+
+.cone-caveat {
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
 .section-heading--light h2 {
   color: var(--paper);
 }
@@ -968,6 +1034,7 @@ pre {
   .relation-grid,
   .intuition-paths,
   .intuition-details,
+  .cone-explainer,
   .results-layout {
     grid-template-columns: 1fr;
   }
@@ -1003,6 +1070,11 @@ pre {
 
   .affiliations {
     display: grid;
+  }
+
+  .cone-relations li {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
   }
 
   .paired-stat {
